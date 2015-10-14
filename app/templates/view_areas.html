@@ -1,0 +1,20 @@
+{% extends 'layouts/application.html' %}
+{% block title %}Areas{% endblock %}
+
+{% block content %}
+  {% if areas %}
+      <ul>
+      {% for area in areas %}
+          <li> Nombre: {{ area.name }} </li>
+          <li> {{ area.description }} </li>
+          <li> {{ area.budgeted_amount }} </li>
+          <li> {{ area.real_amount }} </li>
+          <li> {{ area.status }} </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+      <p>No existen areas que mostrar!!!</p>
+  {% endif %}
+
+  <a href="{% url 'app.views.index' %}">Inicio</a>
+{% endblock %}

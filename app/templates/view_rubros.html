@@ -1,0 +1,20 @@
+{% extends 'layouts/application.html' %}
+{% block title %}Rubros{% endblock %}
+
+{% block content %}
+  {% if rubros %}
+      <ul>
+      {% for rubro in rubros %}
+          <li> Nombre: {{ rubro.name }} </li>
+          <li> {{ rubro.description }} </li>
+          <li> {{ rubro.budgeted_amount }} </li>
+          <li> {{ rubro.real_amount }} </li>
+          <li> {{ rubro.status }} </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+      <p>No existen rubros que mostrar!!!</p>
+  {% endif %}
+
+  <a href="{% url 'app.views.index' %}">Inicio</a>
+{% endblock %}

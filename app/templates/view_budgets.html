@@ -1,0 +1,20 @@
+{% extends 'layouts/application.html' %}
+{% block title %}Presupuesto{% endblock %}
+
+{% block content %}
+  {% if budgets %}
+      <ul>
+      {% for budget in budgets %}
+          <li> Nombre: {{ budget.name }} </li>
+          <li> {{ budget.description }} </li>
+          <li> {{ budget.budgeted_amount }} </li>
+          <li> {{ budget.real_amount }} </li>
+          <li> {{ budget.status }} </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+      <p>No existen presupuestos que mostrar!!!</p>
+  {% endif %}
+
+  <a href="{% url 'app.views.index' %}">Inicio</a>
+{% endblock %}
