@@ -2,19 +2,68 @@
 {% block title %}Areas{% endblock %}
 
 {% block content %}
-  {% if areas %}
-      <ul>
-      {% for area in areas %}
-          <li> Nombre: {{ area.name }} </li>
-          <li> {{ area.description }} </li>
-          <li> {{ area.budgeted_amount }} </li>
-          <li> {{ area.real_amount }} </li>
-          <li> {{ area.status }} </li>
-      {% endfor %}
-      </ul>
-  {% else %}
-      <p>No existen areas que mostrar!!!</p>
-  {% endif %}
+  <style>
+    .container{
+      padding: 20px;
+    }
+    
+    .info-box{
+      width: 70%;
+      margin: 20px auto;
+    }
+    table.data-table {
+      width: 100%;
+  		font-family: verdana, arial, sans-serif;
+  		font-size: 11px;
+  		color: #333333;
+  		border-width: 1px;
+  		border-color: #3A3A3A;
+  		border-collapse: collapse;
+  	}
 
-  <a href="{% url 'app.views.index' %}">Inicio</a>
+  	table.data-table th {
+  		border-width: 1px;
+  		padding: 8px;
+  		border-style: solid;
+  		border-color: #517994;
+  		background-color: #B2CFD8;
+  	}
+
+  	table.data-table tr:hover td {
+  		background-color: #DFEBF1;
+  	}
+
+  	table.data-table td {
+  		border-width: 1px;
+  		padding: 8px;
+  		border-style: solid;
+  		border-color: #517994;
+  		background-color: #ffffff;
+  	}
+  </style>
+
+  <div class="container">
+    {% if areas %}
+      <div class="info-box">
+        <table class="data-table">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+          </tr>
+          {% for area in areas %}
+            <tr>
+              <td>{{ area.name }}</td>
+              <td>{{ area.description }}</td>
+              <td>{{ area.status }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    {% else %}
+        <p>No existen areas que mostrar!!!</p>
+    {% endif %}
+
+    <a href="{% url 'app.views.index' %}">Inicio</a>
+  </div>
 {% endblock %}
