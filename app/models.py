@@ -1,9 +1,13 @@
 from django.db import models
 
 class Area(models.Model):
+    DEFAULT_ID = 1
     name                =models.CharField(max_length=100)
-    description         =models.CharField(max_length=255)
+    description         =models.CharField(max_length=255,blank=True)
     status              =models.CharField(max_length=50)
+
+    def __str__(self):
+        return '%s' % (self.name)
 
     # def get_name(self):
     #     return self.__name
@@ -25,14 +29,17 @@ class Area(models.Model):
 
 class Rubro(models.Model):
     name                =models.CharField(max_length=100)
-    description         =models.CharField(max_length=255)
+    description         =models.CharField(max_length=255,blank=True)
     budgeted_amount     =models.IntegerField()
     real_amount         =models.IntegerField()
     status              =models.CharField(max_length=50)
-    # area                =models.ForeignKey(Area)
+    area                =models.ForeignKey('Area',default=Area.DEFAULT_ID)
 
     def __unicode__(self):
         return '%s' % (self.name)
+
+    def get_area(self):
+        return '%s' % (self.area)
 
     # def get_name(self):
     #     return selft.__name
@@ -72,7 +79,7 @@ class Rubro(models.Model):
 
 class Budget(models.Model):
     name                =models.CharField(max_length=100)
-    description         =models.CharField(max_length=255)
+    description         =models.CharField(max_length=255,blank=True)
     status              =models.CharField(max_length=50)
     rubro               =models.ManyToManyField(Rubro)
 
@@ -121,7 +128,7 @@ class Parameter(models.Model):
 
 class ValueParameter(models.Model):
     value                       =models.CharField(max_length=30)
-    parameter                   = models.ForeignKey('Parameter')
+    parameter                   =models.ForeignKey('Parameter')
     order                       =models.CharField(max_length=3)
     status_value_parameter      =models.CharField(max_length=1)
 

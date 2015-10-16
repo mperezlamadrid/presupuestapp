@@ -2,7 +2,7 @@ from django.contrib import admin
 from app.models import *
 
 class RubroAdmin(admin.ModelAdmin):
-    list_display=('id','name','description','budgeted_amount','real_amount', 'status')
+    list_display=('id','name','description','budgeted_amount','real_amount', 'status', 'get_area')
 
 class AreaAdmin(admin.ModelAdmin):
     list_display=('id','name','description', 'status')
