@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -23,4 +25,8 @@ urlpatterns = [
     url(r'^rubros/', views.view_rubros),
     url(r'^presupuestos/', views.view_budgets),
     url(r'^areas/', views.view_areas),
-]
+    url(r'^parametros/', views.view_parameter),
+    url(r'^valor_parametros/', views.view_value_parameter),
+    url(r'^login/$',views.login_view,name='vista_login'),
+    url(r'^logout/$',views.logout_view,name='vista_logout')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

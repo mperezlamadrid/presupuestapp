@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Parametros</title>
+	</head>
+	{% block content %}
+	<body>
+	 <H2> Listar Parametros </h2>
+		<br/>
+		<a  href="/areas/crear" class="btn btn-success" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+    {% if parametros %}
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Atributo</th>
+          <th>Descripcion</th>
+          <th>Estado</th>
+        </tr>
+        {% for parametros in parametro %}
+          <tr>
+            <td><a href="#">{{parametros.id}}</a> </td>
+            <td>{{ parametro.attribute }}</td>
+            <td>{{ parametro.description }}</td>
+            <td>{{ parametro.status_parameter }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+        <p>No existen parametros que mostrar!!!</p>
+    {% endif %}
+	</body>
+	{% endblock %}
+</html>

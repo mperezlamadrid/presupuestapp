@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Areas</title>
+	</head>
+	{% block content %}
+	<body>
+	 <H2> Listar Areas </h2>
+		<br/>
+		<a  href="/areas/crear" class="btn btn-success" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+    {% if valores_parametros %}
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Valor</th>
+          <th>Parametro</th>
+          <th>Orden</th>
+          <th>Estado</th>
+        </tr>
+        {% for valores_parametros in v_parametros %}
+          <tr>
+            <td><a href="#">{{v_parametros.id}}</a> </td>
+            <td>{{ v_parametros.value }}</td>
+            <td>{{ v_parametros.parameter }}</td>
+            <td>{{ v_parametros.order }}</td>
+            <td>{{ v_parametros.status_value_parameter }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+        <p>No existen Valores de parametros que mostrar!!!</p>
+    {% endif %}
+	</body>
+	{% endblock %}
+</html>

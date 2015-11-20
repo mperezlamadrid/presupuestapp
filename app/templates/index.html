@@ -1,26 +1,4 @@
-{% extends 'layouts/application.html' %}
-
-{% block title %}PresupuestApp{% endblock %}
-
-{% block content %}
-  <style>
-    li a{
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .container{
-      padding: 20px;
-    }
-  </style>
-
-  <div class="container">
-    <h3>Administracion:</h3>
-    <ul>
-      <li><a href="/admin">Admin</a></li>
-      <li><a href="{% url 'app.views.view_rubros' %}">Administrar Rubros</a></li>
-      <li><a href="{% url 'app.views.view_budgets' %}">Administrar Presupuestos</a></li>
-      <li><a href="{% url 'app.views.view_areas' %}">Administrar Areas</a></li>
-    </ul>
-  </div>
-{% endblock %}
+{% extends "base.html" %}
+  {% block content %}
+     <!-- <h1>Bienvenido!</h1> -->
+  {% endblock %}
