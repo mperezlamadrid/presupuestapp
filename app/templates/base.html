@@ -24,6 +24,9 @@
     <!-- Custom CSS -->
     <link href="{% static 'sbadmin2/dist/css/sb-admin-2.css' %}" rel="stylesheet">
 
+    <!-- Landing CSS -->
+    <link href="{% static 'admin/css/landing-page.css' %}" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="{% static 'sbadmin2/bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 
@@ -47,9 +50,9 @@
         {% include "layouts/nav.html" %}
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
+            <div class="container-fluid" style="min-height: 569px;">
+                <div class="row" style="height:100%;">
+                    <div class="col-lg-12" style="min-height: 569px;">
                         {% block content %}
                            <!-- <h1>Ing Software II Contenido</h1> -->
                         {% endblock %}

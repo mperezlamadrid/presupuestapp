@@ -1,0 +1,23 @@
+.landing{
+  background-image: url("intro-bg.jpg");
+  background-size: cover;
+  min-height: 576px;
+  margin: 0 -45px;
+  text-align: center;
+}
+
+.landing h1{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 40px;
+  padding-top: 15%;
+}
+
+.landing p{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 27px;
+  padding-top: 10%;
+}
