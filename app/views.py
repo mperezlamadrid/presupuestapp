@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response, get_object_or_404
 from app.models import *
-from app.forms import  RubroForm, AreaForm, BudgetForm
+from app.forms import  RubroForm, AreaForm, BudgetForm, ParameterForm, ValueParameterForm
 
 # Esta seccion es para las vistas de autenticacion
 
@@ -93,7 +93,27 @@ def view_parameter(request):
         'parametros': Parameter.objects.all()
     })
 
+def crear_parameter(request):
+    if request.method =="POST":
+        form=ParameterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/rubros")
+    else:
+        form=ParameterForm()
+        return  render_to_response( "crear_parametro.html", {'form':form}, context_instance=RequestContext(request) )
+
 def view_value_parameter(request):
     return render_to_response('view_value_parameter.html', {
         'valores_parametros': ValueParameter.objects.all()
     })
+
+def crear_value_parameter(request):
+    if request.method =="POST":
+        form=ValueParameterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/rubros")
+    else:
+        form=ValueParameterForm()
+        return  render_to_response( "crear_valor_parametro.html", {'form':form}, context_instance=RequestContext(request) )

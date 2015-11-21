@@ -29,7 +29,9 @@ urlpatterns = [
     url(r'^areas/', views.view_areas),
     url(r'^crear-area/$',views.crear_area),
     url(r'^parametros/', views.view_parameter),
+    url(r'^crear-parametro/$',views.crear_parameter),
     url(r'^valor_parametros/', views.view_value_parameter),
+    url(r'^crear-valor-parametro/$',views.crear_value_parameter),
     url(r'^login/$',views.login_view,name='vista_login'),
     url(r'^logout/$',views.logout_view,name='vista_logout')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

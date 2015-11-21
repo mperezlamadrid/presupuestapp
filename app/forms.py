@@ -20,3 +20,13 @@ class BudgetForm(ModelForm):
 	class Meta:
 		model=Budget
 		exclude=[]
+
+class ParameterForm(ModelForm):
+	class Meta:
+		model=Parameter
+		exclude=[]
+
+class ValueParameterForm(ModelForm):
+	class Meta:
+		model=ValueParameter
+		exclude=[]
