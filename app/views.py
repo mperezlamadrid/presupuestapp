@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response, get_object_or_404
 from app.models import *
-from app.forms import  RubroForm, AreaForm
+from app.forms import  RubroForm, AreaForm, BudgetForm
 
 # Esta seccion es para las vistas de autenticacion
 
@@ -62,6 +62,16 @@ def view_budgets(request):
     return render_to_response('view_budgets.html', {
         'budgets': Budget.objects.all()
     })
+
+def crear_presupuesto(request):
+    if request.method =="POST":
+        form=BudgetForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/rubros")
+    else:
+        form=BudgetForm()
+        return  render_to_response( "crear_presupuesto.html", {'form':form}, context_instance=RequestContext(request) )
 
 def view_areas(request):
     return render_to_response('view_areas.html', {

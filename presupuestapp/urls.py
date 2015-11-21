@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^rubros/', views.view_rubros),
     url(r'^crear-rubro/$',views.crear_rubro),
     url(r'^presupuestos/', views.view_budgets),
+    url(r'^crear-presupuesto/$',views.crear_presupuesto),
     url(r'^areas/', views.view_areas),
     url(r'^crear-area/$',views.crear_area),
     url(r'^parametros/', views.view_parameter),

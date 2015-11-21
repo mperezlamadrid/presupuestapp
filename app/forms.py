@@ -15,3 +15,8 @@ class AreaForm(ModelForm):
 	class Meta:
 		model=Area
 		exclude=[]
+
+class BudgetForm(ModelForm):
+	class Meta:
+		model=Budget
+		exclude=[]
