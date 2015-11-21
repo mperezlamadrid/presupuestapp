@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index),
     url(r'^rubros/', views.view_rubros),
+    url(r'^crear-rubro/$',views.crear_rubro),
     url(r'^presupuestos/', views.view_budgets),
     url(r'^areas/', views.view_areas),
     url(r'^parametros/', views.view_parameter),

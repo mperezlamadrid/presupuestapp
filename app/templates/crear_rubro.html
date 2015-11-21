@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+<html>
+  <head>
+    <title>Crear Rubro</title>
+  </head>
+
+  {% block content %}
+    <H2> Crear Rubro </h2>
+
+    <form class="form-horizontal" action="" method="post">
+    <br/>
+    <button class="btn btn-success" type="submit" > Guardar </button>
+    <br/><br/>
+    {% csrf_token %}
+    {{ form.as_p }}
+    </form>
+  {% endblock %}
+</html>
