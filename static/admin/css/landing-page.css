@@ -1,23 +1,50 @@
-.landing{
-  background-image: url("intro-bg.jpg");
+.landing-page{
+  background-image: url("../../images/intro-bg.jpg");
   background-size: cover;
   min-height: 576px;
   margin: 0 -45px;
   text-align: center;
+  height: 100%;
 }
 
-.landing h1{
+.landing-page h1{
   margin: 0;
   padding: 0;
   color: #fff;
   font-size: 40px;
-  padding-top: 15%;
+  padding-top: 10%;
 }
 
-.landing p{
+.landing-page p{
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   color: #fff;
   font-size: 27px;
   padding-top: 10%;
+}
+
+.landing-page .bg{
+  background: rgba(0, 0, 0, 0.39);
+  min-height: 590px;
+  height: 100%;
+}
+
+.btn-social{
+  background: #fff;
+  width: 100px;
+  display: inline-block;
+  margin: 0!important;
+  color: #000;
+}
+
+.btn-social span{
+  color: #000;
+}
+
+.social-buttons{
+  margin: 10px;
+}
+
+.navbar-default.sidebar{
+  margin-top: 10px;
 }

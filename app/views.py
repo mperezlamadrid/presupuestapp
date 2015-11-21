@@ -1,11 +1,12 @@
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.template.defaulttags import csrf_token
 from app.models import *
-from app.forms import  RubroForm, AreaForm, BudgetForm, ParameterForm, ValueParameterForm
+from app.forms import  LoginForm, RubroForm, AreaForm, BudgetForm, ParameterForm, ValueParameterForm
 
 # Esta seccion es para las vistas de autenticacion
 def login_view(request):
