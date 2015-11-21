@@ -10,3 +10,8 @@ class RubroForm(ModelForm):
 	class Meta:
 		model=Rubro
 		exclude=[]
+
+class AreaForm(ModelForm):
+	class Meta:
+		model=Area
+		exclude=[]

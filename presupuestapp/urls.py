@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^crear-rubro/$',views.crear_rubro),
     url(r'^presupuestos/', views.view_budgets),
     url(r'^areas/', views.view_areas),
+    url(r'^crear-area/$',views.crear_area),
     url(r'^parametros/', views.view_parameter),
     url(r'^valor_parametros/', views.view_value_parameter),
     url(r'^login/$',views.login_view,name='vista_login'),
