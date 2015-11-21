@@ -12,6 +12,13 @@ class RubroForm(ModelForm):
 		exclude=[]
 
 class AreaForm(ModelForm):
+	name = forms.CharField(label="Nombre", widget=forms.TextInput(attrs={'class':'form-control',
+			 'placeholder':'Nombre la descripcion'}))
+	description = forms.CharField(label="Descripcion", widget=forms.TextInput(attrs={'class':'form-control',
+			 'placeholder':'Descripcion del area'}))
+	status = forms.CharField(label="Estado", widget=forms.TextInput(attrs={'class':'form-control',
+			 'placeholder':'Estado del area ej: A o I'}))
+
 	class Meta:
 		model=Area
 		exclude=[]
